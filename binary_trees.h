@@ -1,5 +1,6 @@
 #ifndef BINARY_TREES_HEADER
 #define BINARY_TREES_HEADER
+#include <sys/types.h>
 
 /**
  * struct binary_tree_s - Binary tree node
@@ -48,5 +49,11 @@ void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int));
 
 /* Goes through a binary tree using post-order traversal */
 void binary_tree_postorder(const binary_tree_t *tree, void (*func)(int));
+
+/* Measures the height of a binary tree */
+size_t binary_tree_height(const binary_tree_t *tree);
+
+/* Returns the maximum of two integers */
+int max(int a, int b);
 
 #endif
