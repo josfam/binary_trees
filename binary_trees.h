@@ -37,4 +37,7 @@ int binary_tree_is_leaf(const binary_tree_t *node);
 /* Checks if a given node is a root */
 int binary_tree_is_root(const binary_tree_t *node);
 
+/* Deletes an entire binary tree */
+void binary_tree_delete(binary_tree_t *tree);
+
 #endif
