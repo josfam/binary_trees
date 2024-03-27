@@ -60,4 +60,6 @@ size_t binary_tree_height(const binary_tree_t *tree);
 /* Returns the maximum of two integers */
 int max(int a, int b);
 
+/* Measures the size of a binary tree */
+size_t binary_tree_size(const binary_tree_t *tree);
 #endif
