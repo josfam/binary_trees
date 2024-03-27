@@ -31,4 +31,7 @@ binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value);
 /* Inserts a node as the right-child of another node */
 binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value);
 
+/* Checks if a node is a leaf */
+int binary_tree_is_leaf(const binary_tree_t *node);
+
 #endif
