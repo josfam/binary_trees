@@ -34,4 +34,7 @@ binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value);
 /* Checks if a node is a leaf */
 int binary_tree_is_leaf(const binary_tree_t *node);
 
+/* Checks if a given node is a root */
+int binary_tree_is_root(const binary_tree_t *node);
+
 #endif
