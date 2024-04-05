@@ -3,6 +3,8 @@
 #include <stddef.h>
 #include <sys/types.h>
 
+#define QUEUE_SIZE 50
+
 /**
  * struct binary_tree_s - Binary tree node
  *
@@ -20,6 +22,20 @@ struct binary_tree_s
 };
 
 typedef struct binary_tree_s binary_tree_t;
+
+/**
+ * struct queue - Abstract queue data structure
+ *
+ * @enq_slot: The next available slot onto which to enqueue an item
+ * @deq_slot: The slot from which to deque an item
+ * @line: The internal array that stores items
+ */
+typedef struct queue
+{
+	int enq_slot;
+	int deq_slot;
+	const binary_tree_t *line[50];
+} queue_t;
 
 /* Prints a binary tree just like the examples */
 void binary_tree_print(const binary_tree_t *);
@@ -87,5 +103,17 @@ binary_tree_t *binary_tree_uncle(binary_tree_t *node);
 /* Finds the lowest common ancestor of two nodes */
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 		const binary_tree_t *second);
+
+/*  Goes through a binary tree using level-order traversal */
+void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
+
+/* get_queue - Returns a pointer to an empty queue */
+queue_t *get_queue();
+
+/* Dequeues a node from the queue */
+const binary_tree_t *dequeue(queue_t *queue);
+
+/* Enqueues a node onto the queue */
+void enqueue(const binary_tree_t *node, queue_t *queue);
 
 #endif
